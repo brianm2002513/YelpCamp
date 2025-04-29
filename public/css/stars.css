@@ -1,0 +1,47 @@
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: white;
+    background-color: #f2f2f2;
+    font-size: 19px;
+    padding: 2px 7px 2px 7px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    width: 33px;
+    height: 33px;
+}
+
+.star-rating label:hover,
+.star-rating input[value="1"]:hover~label,
+.star-rating input[value="1"]:checked~label {
+    background-color: #ffcc4b;
+}
+
+.star-rating input[value="2"]:hover~label,
+.star-rating input[value="2"]:checked~label {
+    background-color: #ffad48;
+}
+
+.star-rating input[value="3"]:hover~label,
+.star-rating input[value="3"]:checked~label {
+    background-color: #ff8742;
+}
+
+.star-rating input[value="4"]:hover~label,
+.star-rating input[value="4"]:checked~label {
+    background-color: #ff643d;
+}
+
+.star-rating input[value="5"]:hover~label,
+.star-rating input[value="5"]:checked~label {
+    background-color: #fb433c;
+}

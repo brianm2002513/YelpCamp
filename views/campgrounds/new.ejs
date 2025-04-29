@@ -1,0 +1,48 @@
+<% layout('layout/boilerplate') %>
+<div class="row">
+  <h1 class="text-center">New Campground</h1>
+  <div class="col-md-6 offset-md-3">
+    <form action="/campgrounds" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" name="campground[title]" id="title" required>
+        <div class="valid-feedback">
+          looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" name="campground[location]" id="location" required>
+        <div class="valid-feedback">
+          looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Campground Price</label>
+        <div class="input-group">
+          <span class="input-group-text" id="price-label">$</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="price" placeholder="0" name="campground[price]" required>
+          <span class="input-group-text">.00</span>
+          <div class="valid-feedback">
+            looks good!
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" name="campground[description]" id="description" required></textarea>
+        <div class="valid-feedback">
+          looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="images" class="form-label">Upload Images</label>
+        <input class="form-control" type="file" id="images" name="image" multiple>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-success" type="submit">Add Campground</button>
+        <a class="btn btn-warning" href="/campgrounds">All Campgrounds</a>
+      </div>
+    </form>
+  </div>
+</div>
