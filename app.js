@@ -16,7 +16,6 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
-const port = 8080;
 
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
@@ -41,11 +40,13 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(mongoSanitize());
 app.use(helmet());
 
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
+
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
     crypto: {
-        secret: 'thisshouldbeabettersecret!'
+        secret: secret
     }
 })
 
@@ -56,7 +57,7 @@ store.on('error', function (e) {
 const sessionConfig = {
     store: store,
     name: 'session',
-    secret: 'thisshouldbeabettersecret!',
+    secret: secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -147,6 +148,8 @@ app.use((err, req, res, next) => {
     if (!err.message) err.message = 'Oh no, something went wrong!'
     res.status(statusCode).render('error', { err });
 })
+
+const port = process.env.PORT || 8080
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}!`);
