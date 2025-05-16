@@ -4,7 +4,7 @@ YelpCamp is a full-stack web application for sharing and reviewing campgrounds. 
 
 ## 🌐 Demo
 
-Check out the live version of YelpCamp here: [https://your-demo-url.vercel.app](https://yelpcamp-pink-eight.vercel.app/)
+Check out the live version of YelpCamp here: [YelpCamp](https://yelpcamp-pink-eight.vercel.app/)
 
 ## 🔧 Features
 
