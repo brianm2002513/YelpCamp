@@ -1,6 +1,6 @@
 # YelpCamp
 
-YelpCamp is a full-stack web application for sharing and reviewing campgrounds. Users can register, log in, create, edit, and delete campground listings, as well as leave reviews for others. This project was built as part of the **Colt Steele Web Developer Bootcamp** and has been deployed using **Vercel**.
+YelpCamp is a full-stack web application for sharing and reviewing campgrounds. Users can register, log in, create, edit, and delete campground listings, as well as leave reviews for others. This project was deployed using **Vercel**.
 
 ## 🌐 Demo
 
